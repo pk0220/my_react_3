@@ -3,22 +3,21 @@ import { useState } from "react";
 export default function App() {
   return (
     <>
-      <Mycomponent />
+      <Mycompo></Mycompo>
     </>
   );
 }
 
-function Mycomponent() {
-  let [counter, setcounter] = useState(0);
-  let increment = () => {
-    console.log(counter++);
-    setcounter(counter);
+function Mycompo() {
+  let [msg, setmsg] = useState("");
+  let changemsg = (e) => {
+    setmsg(e.target.value);
   };
   return (
     <div>
-      <h1>Counter App</h1>
-      <div>Like {counter}</div>
-      <input type="button" value="Like here" onClick={increment} />
+      <h1>counter App 2</h1>
+      <input type="text" value={msg} onChange={changemsg} />
+      <div>{msg}</div>
     </div>
   );
 }
